@@ -3,3 +3,14 @@ title: "P8105 HW1 cmh2275"
 output: github_document
 ---
 
+# Problem 1
+
+```{r}
+library(tidyverse)
+data("penguins", package = "palmerpenguins")
+```
+# Description of Penguins Dataset
+
+* The Penguins data set contains the following variables: `r ls(penguins)`.
+* The Penguins dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+* The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.

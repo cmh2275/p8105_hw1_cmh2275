@@ -14,3 +14,14 @@ data("penguins", package = "palmerpenguins")
 * The Penguins data set contains the following variables: `r ls(penguins)`.
 * The Penguins dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
 * The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
+
+# Bill Length vs Flipper Length Scatterplot 
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+```
+# Saving Scatterplot 
+```{r}
+ggsave ("hw1_billvsflipper_scatterplot.png")
+```
+
+

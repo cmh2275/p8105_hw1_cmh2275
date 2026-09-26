@@ -53,8 +53,14 @@ as.numeric(pull(hw1prob2_df, vec_factor))
 ```
 
 ## Take mean of variables - attempt 2
+```{r}
+mean(pull(hw1prob2_df, norm_samp))
+mean(pull(hw1prob2_df, norm_samp_pos))
+mean(as.numeric(pull(hw1prob2_df, vec_char)))
+mean(as.numeric(pull(hw1prob2_df, vec_factor)))
+```
 
 * The mean of norm_samp is `r mean(pull(hw1prob2_df, norm_samp))`.
 * The mean of norm_samp_pos is `r mean(pull(hw1prob2_df, norm_samp_pos))`.
-* The mean of vec_char is `r mean(pull(hw1prob2_df, vec_char))`.
-* The mean of vec_factor is `r mean(pull(hw1prob2_df, vec_factor))`.
+* The mean of vec_char is `r mean(as.numeric(pull(hw1prob2_df, vec_char)))`.
+* The mean of vec_factor is `r mean(as.numeric(pull(hw1prob2_df, vec_factor)))`.

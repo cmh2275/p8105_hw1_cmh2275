@@ -9,19 +9,52 @@ output: github_document
 library(tidyverse)
 data("penguins", package = "palmerpenguins")
 ```
-# Description of Penguins Dataset
+## Description of Penguins Dataset
 
 * The Penguins data set contains the following variables: `r ls(penguins)`.
 * The Penguins dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
 * The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
 
-# Bill Length vs Flipper Length Scatterplot 
+## Bill Length vs Flipper Length Scatterplot 
 ```{r}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 ```
-# Saving Scatterplot 
+## Saving Scatterplot 
 ```{r}
 ggsave ("hw1_billvsflipper_scatterplot.png")
 ```
 
+# Problem 2 
 
+## Create dataframe
+```{r}
+hw1prob2_df = tibble(
+  norm_samp = rnorm(10),
+  norm_samp_pos = norm_samp > 0, 
+  vec_char = letters[1:10], 
+  vec_factor = factor(rep_len(c ("low", "med", "high"),10)), 
+)
+```
+
+## Take mean of variables - attempt 1
+
+* The mean of norm_samp is `r mean(pull(hw1prob2_df, norm_samp))`.
+* The mean of norm_samp_pos is `r mean(pull(hw1prob2_df, norm_samp_pos))`.
+* The mean of vec_char is `r mean(pull(hw1prob2_df, vec_char))`.
+* The mean of vec_factor is `r mean(pull(hw1prob2_df, vec_factor))`.
+
+
+## Convert variables 
+```{r, results = "hide"}
+as.numeric(pull(hw1prob2_df, norm_samp_pos))
+as.numeric(pull(hw1prob2_df, vec_char))
+as.numeric(pull(hw1prob2_df, vec_factor))
+
+```
+
+## Take mean of variables - attempt 2
+
+* The mean of norm_samp is `r mean(pull(hw1prob2_df, norm_samp))`.
+* The mean of norm_samp_pos is `r mean(pull(hw1prob2_df, norm_samp_pos))`.
+* The mean of vec_char is `r mean(pull(hw1prob2_df, vec_char))`.
+* The mean of vec_factor is `r mean(pull(hw1prob2_df, vec_factor))`.
